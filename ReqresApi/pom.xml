@@ -62,7 +62,11 @@
         <artifactId>jackson-databind</artifactId>
         <version>2.13.5</version>
     </dependency>
-
+     <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.4.0</version>
+    </dependency>
     <dependency>
         <groupId>com.oracle.ojdbc</groupId>
         <artifactId>ojdbc8</artifactId>
@@ -101,14 +105,16 @@
            <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-surefire-plugin</artifactId>
-               <version>3.1.2</version>
+               <version>3.0.0-M5</version>
                <configuration>
                    <skipTests>false</skipTests>
                    <includes>
                        <include>**/ApiTestRunner.java</include>
                    </includes>
                    <systemPropertyVariables>
-                        <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                        <!--suppress UnresolvedMavenProperty -->
+                       <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                       <!--suppress UnresolvedMavenProperty -->
                        <cucumber.options>${cucumber.options}</cucumber.options>
                    </systemPropertyVariables>
                </configuration>
@@ -116,7 +122,7 @@
            <plugin>
                <groupId>net.masterthought</groupId>
                <artifactId>maven-cucumber-reporting</artifactId>
-               <version>5.7.0</version>
+               <version>5.5.4</version>
                <executions>
                    <execution>
                        <id>execution</id>
