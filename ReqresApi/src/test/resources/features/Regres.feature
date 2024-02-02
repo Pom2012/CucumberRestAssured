@@ -22,5 +22,5 @@ Feature: Regres api
     Then get the response "<status_code>"
     Examples:
       | endpoint | status_code |
-      |  /user/23   |      200   |
+      |  /user/23   |      404   |
 
