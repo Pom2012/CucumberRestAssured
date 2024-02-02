@@ -7,8 +7,6 @@ import cucumber.api.java.Before;
 
 public class Hook {
 
-
-
     @Before
     public void setupBefore(Scenario scenario) throws Exception {
         System.out.println("*************************************************************************************");
@@ -18,13 +16,13 @@ public class Hook {
 
     @After
     public void tearDownAfter(Scenario scenario) throws Exception {
-        if (BaseApi.response == null) {
+        if (BaseApi.RESPONSE == null) {
             scenario.write("Response: no response");
         }else {
             System.out.println("*************************************************************************************");
             System.out.println("        Scenario: "+scenario.getName()+" is completed");
-            System.out.println("        Response: "+BaseApi.response.asString());
-            System.out.println("        Status code: "+BaseApi.response.getStatusCode());
+            System.out.println("        Response: "+BaseApi.RESPONSE.asString());
+            System.out.println("        Status code: "+BaseApi.RESPONSE.getStatusCode());
             System.out.println("*************************************************************************************");
         }
 
