@@ -4,6 +4,10 @@ import io.cucumber.datatable.DataTable;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.hamcrest.Matchers.equalTo;
 
 public class TestImpl extends BaseApi {
@@ -30,5 +34,10 @@ public class TestImpl extends BaseApi {
     public void responseHasData(Response response, String string, String string2) {
         response.then().assertThat().body("id", equalTo(Integer.parseInt(string)));
         response.then().assertThat().body("token", equalTo(string2));
+    }
+
+    public static void main(String[] args) {
+
+        ArrayList col=new ArrayList(Arrays.asList("asdasd","asd"));
     }
 }
